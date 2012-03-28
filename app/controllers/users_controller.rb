@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-	before_filter :check_profile, :except => :new
+	before_filter :check_for_profile, :except => :new
 
 	def index
 	end
@@ -8,14 +8,12 @@ class UsersController < ApplicationController
 	def new
 	end
 
-	def check_profile
+	def check_for_profile
 		
-		if true
+		user_profile = true
 
+		if user_profile == false
 		redirect_to new_user_url
-
-		else
-
 		end
 
 	end
