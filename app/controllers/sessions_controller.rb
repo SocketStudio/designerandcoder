@@ -1,5 +1,10 @@
 class SessionsController < ApplicationController
   
+# User lands on Sessions New.  If they area already signed in, redirect to index of users
+# If they are not signed in, render new so they can sign in
+
+skip_before_filter :signed_in?
+
   def new
   end
 
