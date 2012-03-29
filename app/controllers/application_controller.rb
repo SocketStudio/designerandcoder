@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def signed_in?
-  	unless @current_user
+  	unless current_user
   		redirect_to sign_in_url
   	end
   end

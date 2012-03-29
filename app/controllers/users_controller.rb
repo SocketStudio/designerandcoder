@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
 	def check_for_profile
 		
-		user_profile = true
+		user_profile = false
 
 		if user_profile == false
 		redirect_to new_user_url
