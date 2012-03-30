@@ -9,10 +9,8 @@ class UsersController < ApplicationController
 	end
 
 	def check_for_profile
-		
-		user_profile = false
 
-		if user_profile == false
+		unless current_user.designer_profile.present?
 		redirect_to new_user_url
 		end
 

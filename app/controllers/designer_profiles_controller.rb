@@ -41,10 +41,11 @@ class DesignerProfilesController < ApplicationController
   # POST /designer_profiles.json
   def create
     @designer_profile = DesignerProfile.new(params[:designer_profile])
+    @designer_profile.user_id = current_user.id
 
     respond_to do |format|
       if @designer_profile.save
-        format.html { redirect_to @designer_profile, notice: 'Designer profile was successfully created.' }
+        format.html { redirect_to users_path, notice: 'Designer profile was successfully created.' }
         format.json { render json: @designer_profile, status: :created, location: @designer_profile }
       else
         format.html { render action: "new" }
