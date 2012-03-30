@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120326003711) do
+ActiveRecord::Schema.define(:version => 20120330152858) do
+
+  create_table "designer_profiles", :force => true do |t|
+    t.string   "dribble_profile"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "provider"

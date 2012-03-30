@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   
+  	has_one :designer_profile
   
   def self.create_with_omniauth(auth)
     create! do |user|
