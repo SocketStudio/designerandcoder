@@ -1,10 +1,17 @@
-<p id="notice"><%= notice %></p>
+<h1>/Designer Profile</h1>
 
 <p>
-  <b>Dribble profile:</b>
+  <b>Dribble profile</b><br>
   <%= @designer_profile.dribble_profile %>
 </p>
 
+<p>
+  <b>User</b><br>
+  <%= @designer_profile.user_id %>
+</p>
 
-<%= link_to 'Edit', edit_designer_profile_path(@designer_profile) %> |
-<%= link_to 'Back', designer_profiles_path %>
+<div class="form-actions">
+  <%= link_to 'Back', designer_profiles_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_designer_profile_path(@designer_profile), :class => 'btn' %>
+  <%= link_to 'Delete', designer_profile_path(@designer_profile), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>
