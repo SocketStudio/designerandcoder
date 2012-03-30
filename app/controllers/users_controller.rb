@@ -2,11 +2,10 @@ class UsersController < ApplicationController
 
 	before_filter :check_for_profile, :except => :new
 
-
-	def new
+	def index
 	end
 
-	def index
+	def new
 	end
 
 	def check_for_profile
