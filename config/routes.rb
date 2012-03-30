@@ -1,4 +1,6 @@
 Designerandcoder::Application.routes.draw do
+  resources :coder_profiles
+
   resources :designer_profiles
   resources :users
 

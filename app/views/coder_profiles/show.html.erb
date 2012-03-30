@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @coder_profile.user_id %>
+</p>
+
+<p>
+  <b>Github profile:</b>
+  <%= @coder_profile.github_profile %>
+</p>
+
+
+<%= link_to 'Edit', edit_coder_profile_path(@coder_profile) %> |
+<%= link_to 'Back', coder_profiles_path %>
