@@ -1,25 +1,17 @@
-<%= form_for(@coder_profile) do |f| %>
-  <% if @coder_profile.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@coder_profile.errors.count, "error") %> prohibited this coder_profile from being saved:</h2>
+<%= form_for @coder_profile, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> /Coder Profile</legend>
 
-      <ul>
-      <% @coder_profile.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+    <div class="control-group">
+      <%= f.label :github_profile, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :github_profile, :class => 'text_field' %>
+      </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :github_profile %><br />
-    <%= f.text_field :github_profile %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', coder_profiles_path, :class => 'btn' %>
+    </div>
+  </fieldset>
 <% end %>

@@ -1,25 +1,26 @@
-<h1>Listing coder_profiles</h1>
-
-<table>
-  <tr>
-    <th>User</th>
-    <th>Github profile</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @coder_profiles.each do |coder_profile| %>
-  <tr>
-    <td><%= coder_profile.user_id %></td>
-    <td><%= coder_profile.github_profile %></td>
-    <td><%= link_to 'Show', coder_profile %></td>
-    <td><%= link_to 'Edit', edit_coder_profile_path(coder_profile) %></td>
-    <td><%= link_to 'Destroy', coder_profile, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<h1>Coder Profiles</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>User</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @coder_profiles.each do |coder_profile| %>
+      <tr>
+        <td><%= coder_profile.id %></td>
+        <td><%= link_to coder_profile.user_id, coder_profile_path(coder_profile) %></td>
+        <td><%= coder_profile.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_coder_profile_path(coder_profile), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', coder_profile_path(coder_profile), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Coder profile', new_coder_profile_path %>
+<%= link_to 'New', new_coder_profile_path, :class => 'btn btn-primary' %>

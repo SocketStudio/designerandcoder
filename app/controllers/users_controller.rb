@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
 	def check_for_profile
 
-		unless current_user.designer_profile.present?
+		unless current_user.designer_profile.present? || current_user.coder_profile.present?
 		redirect_to new_user_url
 		end
 

@@ -41,10 +41,11 @@ class CoderProfilesController < ApplicationController
   # POST /coder_profiles.json
   def create
     @coder_profile = CoderProfile.new(params[:coder_profile])
+    @coder_profile.user_id = current_user.id
 
     respond_to do |format|
       if @coder_profile.save
-        format.html { redirect_to @coder_profile, notice: 'Coder profile was successfully created.' }
+        format.html { redirect_to users_path, notice: 'Coder profile was successfully created.' }
         format.json { render json: @coder_profile, status: :created, location: @coder_profile }
       else
         format.html { render action: "new" }

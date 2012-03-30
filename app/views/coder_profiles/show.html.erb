@@ -1,15 +1,17 @@
-<p id="notice"><%= notice %></p>
+<h1>/Coder Profile</h1>
 
 <p>
-  <b>User:</b>
+  <b>User</b><br>
   <%= @coder_profile.user_id %>
 </p>
 
 <p>
-  <b>Github profile:</b>
+  <b>Github profile</b><br>
   <%= @coder_profile.github_profile %>
 </p>
 
-
-<%= link_to 'Edit', edit_coder_profile_path(@coder_profile) %> |
-<%= link_to 'Back', coder_profiles_path %>
+<div class="form-actions">
+  <%= link_to 'Back', coder_profiles_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_coder_profile_path(@coder_profile), :class => 'btn' %>
+  <%= link_to 'Delete', coder_profile_path(@coder_profile), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>
