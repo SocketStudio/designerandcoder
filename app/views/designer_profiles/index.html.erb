@@ -1,0 +1,23 @@
+<h1>Listing designer_profiles</h1>
+
+<table>
+  <tr>
+    <th>Dribble profile</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @designer_profiles.each do |designer_profile| %>
+  <tr>
+    <td><%= designer_profile.dribble_profile %></td>
+    <td><%= link_to 'Show', designer_profile %></td>
+    <td><%= link_to 'Edit', edit_designer_profile_path(designer_profile) %></td>
+    <td><%= link_to 'Destroy', designer_profile, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Designer profile', new_designer_profile_path %>
