@@ -3,6 +3,11 @@ class UsersController < ApplicationController
 	before_filter :check_for_profile, :except => :new
 
 	def index
+		if current_user.designer_profile.present?
+			redirect_to coder_profiles_path
+		else
+			redirect_to designer_profiles_path
+		end
 	end
 
 	def new
