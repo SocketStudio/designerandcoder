@@ -1,12 +1,16 @@
-<%= form_for @designer_profile, :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for @designer_profile, :html => { :class => 'well' } do |f| %>
   <fieldset>
     <legend><%= controller.action_name.capitalize %> /Designer Profile</legend>
 
     <div class="control-group">
       <%= f.label :dribble_profile, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :dribble_profile, :class => 'text_field' %>
+
+    <div class="controls">
+      <div class="input-prepend">
+        <span class="add-on">dribble.com/</span><%= f.text_field :dribble_profile, :class => 'span2' %>
       </div>
+    </div>
+
     </div>
 
     <div class="form-actions">
