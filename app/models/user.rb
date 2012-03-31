@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.name = auth["info"]["name"]
+      user.twitter_profile_image_url = auth["info"]["image"]
+      user.twitter_location = auth["info"]["location"]
     end
   end
   

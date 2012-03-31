@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120330184539) do
+ActiveRecord::Schema.define(:version => 20120331184611) do
 
   create_table "coder_profiles", :force => true do |t|
     t.integer  "user_id"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(:version => 20120330184539) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "twitter_profile_image_url"
+    t.string   "twitter_location"
   end
 
 end
