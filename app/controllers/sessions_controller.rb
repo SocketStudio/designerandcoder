@@ -10,7 +10,13 @@ skip_before_filter :signed_in?
 
   def create
     auth = request.env["omniauth.auth"]
-    user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
+
+    if user = User.find_by_provider_and_uid(auth["provider"], auth["uid"])
+      update_user(user, auth)
+    else
+      User.create_with_omniauth(auth)
+    end
+
     session[:user_id] = user.id
     redirect_to users_url, :notice => "Signed in!"
   end
@@ -18,6 +24,11 @@ skip_before_filter :signed_in?
   def destroy
     session[:user_id] = nil
     redirect_to root_url, :notice => "Signed out!"
+  end
+
+  def update_user(user, auth)
+    user.name = auth["info"]["name"]
+    user.save
   end
   
   
