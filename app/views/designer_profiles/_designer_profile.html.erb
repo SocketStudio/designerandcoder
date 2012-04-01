@@ -1,9 +1,10 @@
 <div class="row">
-	<div class="span 6">
-
-		<%= image_tag designer_profile.user.twitter_profile_image_url %>
-		<%= designer_profile.user.name %>
-
+	<div class="span6">
+<hr>
+<%= image_tag designer_profile.user.twitter_profile_image_url %>
+		<h2><%= designer_profile.user.name %></h2>
+				<i class="icon-map-marker"></i><%= designer_profile.user.twitter_location %><br>
+		Dribbble: <%= designer_profile.dribble_profile %>
+<hr>
 	</div>
 </div>
-<hr>
