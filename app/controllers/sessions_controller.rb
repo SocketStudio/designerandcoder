@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
 skip_before_filter :signed_in?
 
   def new
+    render :layout => 'basic'
   end
 
   def create

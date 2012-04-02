@@ -1,15 +1,17 @@
+<hr>
 <div class="row">
-	<div class="span8 hero-unit">
+	<div class="span8">
 		<div class="row">
 			<div class="span1">
 				<%= image_tag designer_profile.user.twitter_profile_image_url, :class => 'twitter_profile_image' %>
 			</div>
 			<div class="span7">
 				<h1 class="user_name"><%= designer_profile.user.name %></h1>
-				<h2><i class="icon-map-marker"></i><%= designer_profile.user.twitter_location %></h2>
-				<br>
-				Dribbble: <%= designer_profile.dribble_profile %>
+				<p>I'm interested in collaborating on anything really.  Really enjoy apps to do with food.</p>
+				<h4><i class="icon-map-marker"></i> <%= designer_profile.user.twitter_location %></h4>
+				<i class="icon-user"></i> <a href="http://dribbble.com/<%= designer_profile.dribble_profile %>">dribbble.com/<%= designer_profile.dribble_profile %></a>
 			</div>
 		</div>
 	</div>
 </div>
+<hr>
