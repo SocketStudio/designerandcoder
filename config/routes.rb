@@ -8,6 +8,7 @@ Designerandcoder::Application.routes.draw do
   # first created -> highest priority.
 
   match "/auth/:provider/callback" => "sessions#create"
+  match "/auth/failure" => "sessions#failure", :as => :auth_failure
   match "/signout" => "sessions#destroy", :as => :signout
   match "/sign_in" => "sessions#new", :as => :sign_in
   

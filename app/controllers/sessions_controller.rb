@@ -9,6 +9,10 @@ skip_before_filter :signed_in?
     render :layout => 'basic'
   end
 
+  def failure
+    redirect_to sign_in_path, :notice => "Oops, something went wrong.  Please try again."
+  end
+
   def create
     auth = request.env["omniauth.auth"]
       if user = User.find_by_provider_and_uid(auth["provider"], auth["uid"])

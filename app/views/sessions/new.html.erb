@@ -1,5 +1,11 @@
+<% if notice %>
+<div class="alert alert-error">
+	<%= notice %>
+</div>
+<% end %>
+
 <div class="hero-unit">
 	<h1>Designer + Coder</h1>
-	<h2>Let's build something awesome.</h2>
+	<h2>Let's build something awesome.</h2><br>
 	<%= link_to "Sign in with Twitter", "/auth/twitter", :class => 'btn btn-primary btn-large' %>
 </div>
