@@ -33,7 +33,13 @@ class DesignerProfilesController < ApplicationController
 
   # GET /designer_profiles/1/edit
   def edit
-    @designer_profile = DesignerProfile.find(params[:id])
+     # check to see if the id they are requesting to edit
+     # is their id, and that they're a designer or coder
+     if current_user.designer_profile.id==params[:id].to_i && current_user.designer_profile.present?
+       @designer_profile = DesignerProfile.find(params[:id])
+      else
+        redirect_to users_path, :flash=>{:error=>"Naughty naughty"}
+      end
   end
 
   # POST /designer_profiles

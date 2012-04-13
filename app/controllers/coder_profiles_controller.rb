@@ -34,7 +34,12 @@ class CoderProfilesController < ApplicationController
 
   # GET /coder_profiles/1/edit
   def edit
-    @coder_profile = CoderProfile.find(params[:id])
+    if current_user.coder_profile.id==params[:id].to_i
+       @coder_profile = CoderProfile.find(params[:id])
+      else
+        redirect_to users_path, :flash=>{:error=>"Naughty naughty"}
+      end
+    
   end
 
   # POST /coder_profiles

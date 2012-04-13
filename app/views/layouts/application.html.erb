@@ -10,13 +10,20 @@
 	
 <div class="container">
 	
+	<%= render "layouts/alerts" %>
+	
 	<% if current_user %>
 	  Welcome <%= current_user.name %>!
 	  <%= link_to "Sign Out", signout_path %>
+		<% if  current_user.designer_profile.present? || current_user.coder_profile.present? %>
+		<%= link_to "My Profile", current_user.designer_profile.present? ? edit_designer_profile_path(current_user.designer_profile.id) : edit_coder_profile_path(current_user.coder_profile.id) %>
+		<% end %>
 	<% else %>
 	  <%= link_to "Sign in with Twitter", "/auth/twitter" %>
 	<% end %>
-
+	
+	
+	
 	<%= yield %>
 	
 </div><!-- end container -->

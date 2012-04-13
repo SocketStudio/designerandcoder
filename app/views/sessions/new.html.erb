@@ -1,8 +1,6 @@
-<% if notice %>
-<div class="alert alert-error">
-	<%= notice %>
-</div>
-<% end %>
+
+<%= content_tag :div, notice, :class=>"alert alert-error" if flash[:notice]%>
+
 
 <div class="hero-unit span6">
 	<h1>Designer + Coder</h1><br>
