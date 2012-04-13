@@ -35,7 +35,7 @@ class DesignerProfilesController < ApplicationController
   def edit
      # check to see if the id they are requesting to edit
      # is their id, and that they're a designer or coder
-     if current_user.id==params[:id].to_i && current_user.designer_profile.present?
+     if current_user.designer_profile.id==params[:id].to_i && current_user.designer_profile.present?
        @designer_profile = DesignerProfile.find(params[:id])
       else
         redirect_to users_path, :flash=>{:error=>"Naughty naughty"}
