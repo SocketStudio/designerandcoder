@@ -16,7 +16,8 @@ skip_before_filter :signed_in?
   def create
     auth = request.env["omniauth.auth"]
       if user = User.find_by_provider_and_uid(auth["provider"], auth["uid"])
-        update_user(user, auth)
+        user.set_details(auth)
+        user.save
       else
        user = User.create_with_omniauth(auth)
       end
@@ -28,13 +29,6 @@ skip_before_filter :signed_in?
   def destroy
     session[:user_id] = nil
     redirect_to root_url, :notice => "Signed out!"
-  end
-
-  def update_user(user, auth)
-    user.name = auth["info"]["name"]
-    user.twitter_profile_image_url = auth["info"]["image"]
-    user.twitter_location = auth["info"]["location"]
-    user.save
   end
   
   
