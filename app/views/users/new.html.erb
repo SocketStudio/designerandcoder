@@ -8,12 +8,12 @@
 	<%= form_for @user do |user_form| %>	
 
 		
-		<%= render "designer_form" if @user.designer_profile %>
+		<%= render :partial=>"designer_form", :locals=>{:user_form => user_form } if @user.designer_profile %>
 
-		<%= render "coder_form" if @user.coder_profile %>
+		<%= render :partial=>"coder_form", :locals=>{:user_form => user_form } if @user.coder_profile %>
 
 	<div class="form-actions">
-      <%= user_form.submit "Sign up!", :class => 'btn btn-primary' %>
+      <%= user_form.submit "Create My Profile", :class => 'btn btn-primary' %>
       <%= link_to 'Cancel', new_user_path, :class => 'btn' %>
    </div>
 

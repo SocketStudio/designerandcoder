@@ -1,6 +1,9 @@
 class DesignerProfilesController < ApplicationController
   # GET /designer_profiles
   # GET /designer_profiles.json
+
+
+
   def index
     @designer_profiles = DesignerProfile.all
     respond_to do |format|
