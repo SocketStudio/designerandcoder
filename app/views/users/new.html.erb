@@ -7,6 +7,8 @@
 
 	<%= form_for @user do |user_form| %>	
 
+		<%= render :partial=>"user_form", :locals=>{:user_form => user_form } %>
+
 		
 		<%= render :partial=>"designer_form", :locals=>{:user_form => user_form } if @user.designer_profile %>
 

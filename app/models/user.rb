@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   	has_one :coder_profile
     accepts_nested_attributes_for :coder_profile
 
+    validates :twitter_location, :presence=>true
   
   def self.create_with_omniauth(auth)
     create! do |user|
