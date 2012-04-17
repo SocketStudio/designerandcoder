@@ -18,12 +18,14 @@
 				<h1 class="user_name"><%= coder_profile.user.name %><span class="location"></span></h1>
 				<h4><i class="icon-map-marker"></i><%= coder_profile.user.twitter_location %> <i class="icon-magnet"></i>432 Followers</h4>
 				<br>
-				<p>I'm most in collaborating on: a crazy idea I have about how to integrate Facebook and Pinterest.</p>
+				<p><strong>Interested in collaborating on:</strong> a crazy idea I have about how to integrate Facebook and Pinterest.</p>
 				<div class="somethingcool">Something cool I've made: <a href="http://www.google.com/">www.google.com</a></div>
 				<div class="github_url">Github url: <a href="#">Github.com/animalrobot</a></div>
 				<br>
-				<i class="icon-comment"></i><a href="https://twitter.com/intent/tweet?screen_name=<%= coder_profile.user.twitter_username %>" class="twitter-mention" data-related="DesignerCoder"> Say hi :)</a>
+
+				<a href="https://twitter.com/intent/tweet?screen_name=<%= coder_profile.user.twitter_username %>" class="btn btn-mini" data-related="DesignerCoder"><i class="icon-comment"></i> Say hi :) </a> 
+
+				<a href="https://twitter.com/intent/tweet?screen_name=<%= coder_profile.user.twitter_username %>" class="btn btn-mini" data-related="DesignerCoder"><i class="icon-user"></i> Follow</a>
 			</div>
 		</div>
 		
-<hr>
