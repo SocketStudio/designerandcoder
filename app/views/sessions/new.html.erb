@@ -1,10 +1,10 @@
 
 <%= content_tag :div, notice, :class=>"alert alert-error" if flash[:notice]%>
 
-
+<hr>
 <div class="hero-unit span6">
+	<%= image_tag asset_path('splash_icon.jpg')%>
 	<h1>Designer &amp; Coder</h1><br>
-	<p>Designer &amp; Coder lets designers and programmers hook-up with one another for sweet collaborations. Find your geek-mate and change the world.</p><br>
+	<p>Designer &amp; Coder lets designers and programmers hook-up for sweet collaborations. Find your geek-mate and change the world.</p><br>
 	<%= link_to "Sign in with Twitter", "/auth/twitter", :class => 'btn btn-primary btn-large', :id => 'sign_in' %>
 </div>
-
