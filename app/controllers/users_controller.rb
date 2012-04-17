@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-	before_filter :check_for_profile, :except => :new
+	before_filter :check_for_profile, :except => [:new,:update]
 
 	def index
 		if current_user.designer_profile.present?
@@ -12,6 +12,15 @@ class UsersController < ApplicationController
   
   
 	def new
+		@user=User.find(current_user.id) if params[:designer] || params[:coder]
+		@user.build_designer_profile if params[:designer]
+		@user.build_coder_profile if params[:coder]
+	end
+
+	def update
+		 @user=current_user
+		 params[:user][:id]=@user.id
+		 @user.update_attributes(params[:user])
 	end
   
 	def check_for_profile

@@ -1,4 +1,4 @@
-<%= form_for @designer_profile, :html => { :class => 'well' } do |f| %>
+<%= fields_for @user.designer_profile, :html => { :class => 'well' } do |f| %>
   <fieldset>
     <legend>Build your Designer Profile</legend>
 
@@ -13,9 +13,5 @@
 
     </div>
 
-    <div class="form-actions">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to 'Cancel', designer_profiles_path, :class => 'btn' %>
-    </div>
   </fieldset>
 <% end %>

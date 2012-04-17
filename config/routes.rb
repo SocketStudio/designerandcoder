@@ -1,8 +1,8 @@
 Designerandcoder::Application.routes.draw do
   resources :coder_profiles
   resources :designer_profiles
-  resources :users, :only=>["index","new"]
-
+  resources :users
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

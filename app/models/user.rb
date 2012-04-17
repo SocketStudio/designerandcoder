@@ -1,7 +1,10 @@
 class User < ActiveRecord::Base
   
   	has_one :designer_profile
-  	has_one :coder_profile
+    accepts_nested_attributes_for :designer_profile
+
+  	has_one :coder_profile    
+    accepts_nested_attributes_for :coder_profile
   
   def self.create_with_omniauth(auth)
     create! do |user|

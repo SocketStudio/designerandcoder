@@ -1,4 +1,22 @@
 <br/><br/>
-<%= link_to 'I am a designer seeking a coder', new_designer_profile_path, :class => 'btn btn-primary btn-large' %>
+<% if !@user %>
+<%= link_to 'I am a designer seeking a coder', new_user_path(:designer=>true), :class => 'btn btn-primary btn-large' %>
 
-<%= link_to 'I am coder seeking a designer', new_coder_profile_path, :class => 'btn btn-primary btn-large' %>
+<%= link_to 'I am coder seeking a designer',  new_user_path(:coder=>true), :class => 'btn btn-primary btn-large' %>
+<% end %>
+
+	<%= form_for @user do |user_form| %>	
+
+		
+		<%= render "designer_form" if @user.designer_profile %>
+
+		<%= render "coder_form" if @user.coder_profile %>
+
+	<div class="form-actions">
+      <%= user_form.submit "Sign up!", :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', new_user_path, :class => 'btn' %>
+   </div>
+
+	<% end if @user %>
+
+
