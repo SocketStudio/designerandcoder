@@ -1,11 +1,17 @@
 <hr>
 		<div class="row coder_profile">
-			<div class="span1"><%= image_tag current_user.twitter_profile_image_url, :class => 'designer_icon circle' %> <span class="amp">&amp;</span> </div>
-			<div class="span1">
-				<div class="octagon-top" style="background-image: url('<%= coder_profile.user.twitter_profile_image_url %>');"></div>
-				<div class="octagon-middle" style=" background-image: url('<%= coder_profile.user.twitter_profile_image_url %>');"></div>
-				<div class="octagon-bottom" style=" background-image: url('<%= coder_profile.user.twitter_profile_image_url %>');"></div>
-			</div>
+			<div class="span2">
+				<div class="designer_icon">
+					<%= image_tag current_user.twitter_profile_image_url, :class => 'circle' %>
+					<span class="amp">&amp;</span> 
+				</div>
+				<div class="octagon">
+					<div class="octagon-top" style="background-image: url('<%= coder_profile.user.twitter_profile_image_url %>');"></div>
+					<div class="octagon-middle" style=" background-image: url('<%= coder_profile.user.twitter_profile_image_url %>');"></div>
+					<div class="octagon-bottom" style=" background-image: url('<%= coder_profile.user.twitter_profile_image_url %>');"></div>
+				</div><!-- end octagon -->
+
+			</div><!-- end span3 -->
 			<div class="span7">
 				<h1 class="user_name"><%= coder_profile.user.name %></h1>
 				<p><%= coder_profile.user.twitter_description %></p>
