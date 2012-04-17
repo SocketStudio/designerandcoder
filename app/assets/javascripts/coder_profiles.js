@@ -5,10 +5,10 @@ $(document).ready(function() {
 
 		$(".coder_profile").hover(
   function () {
-    $('.designer_icon').animate({opacity: 1});
+    $(this).animate({opacity: 0}, 100);
   },
   function () {
-    $('.designer_icon').animate({opacity: 0});
+    $(this).animate({opacity: 1},100);
   }
 );
 });
