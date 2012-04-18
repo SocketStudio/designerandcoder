@@ -1,8 +1,8 @@
 Designerandcoder::Application.routes.draw do
   resources :coder_profiles
   resources :designer_profiles
-  resources :users, :only=>["index","new"]
-
+  resources :users
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -10,6 +10,8 @@ Designerandcoder::Application.routes.draw do
   match "/auth/failure" => "sessions#failure", :as => :auth_failure
   match "/signout" => "sessions#destroy", :as => :signout
   match "/sign_in" => "sessions#new", :as => :sign_in
+  match "/designers" => "users#designers", :as => :designers
+  match "/coders" => "users#coders", :as => :coders
   
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

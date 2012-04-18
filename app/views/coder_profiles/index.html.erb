@@ -1,29 +1,18 @@
-<h1>Coder Profiles</h1>
+<div class="page-header">
+<h1>Coder Profiles <small>Find yourself a code-slinging ninja!</small></h1>
+</div>
+
 <%= render :partial => "coder_profile", :collection => @coder_profiles %>
 
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>User</th>
-      <th>Created at</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @coder_profiles.each do |coder_profile| %>
-      <tr>
-        <td><%= coder_profile.id %></td>
-        <td><%= link_to coder_profile.user_id, coder_profile_path(coder_profile) %></td>
-        <td><%= coder_profile.created_at %></td>
-        <td>
-          <%= link_to 'Edit', edit_coder_profile_path(coder_profile), :class => 'btn btn-mini' %>
-          <%= link_to 'Destroy', coder_profile_path(coder_profile), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'New', new_coder_profile_path, :class => 'btn btn-primary' %>
+<div class="pagination">
+  <ul>
+    <li><a href="#">Prev</a></li>
+    <li class="active">
+      <a href="#">1</a>
+    </li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">Next</a></li>
+  </ul>
+</div>

@@ -1,0 +1,13 @@
+<%= user_form.fields_for :coder_profile, :html => { :class => 'well' } do |f| %>
+  <fieldset>
+    <legend>Build your coder profile</legend>
+
+
+       <div class="controls">
+      <div class="input-prepend">
+        <span class="add-on">github.com/</span><%= f.text_field :github_profile, :class => 'span2' %>
+      </div>
+    </div>
+
+  </fieldset>
+<% end %>

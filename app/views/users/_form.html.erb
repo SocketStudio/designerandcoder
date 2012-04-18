@@ -1,0 +1,3 @@
+<%= render :partial=>"designer_form", :locals=>{:user_form => user_form } if @user.designer_profile %>
+
+<%= render :partial=>"coder_form", :locals=>{:user_form => user_form } if @user.coder_profile %>

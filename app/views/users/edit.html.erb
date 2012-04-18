@@ -1,0 +1,14 @@
+	<%= form_for @user do |user_form| %>	
+
+		<%= render :partial=>"user_form", :locals=>{:user_form => user_form } %>
+
+		<%= render :partial=>"designer_form", :locals=>{:user_form => user_form } if @user.designer_profile %>
+
+		<%= render :partial=>"coder_form", :locals=>{:user_form => user_form } if @user.coder_profile %>
+
+	<div class="form-actions">
+      <%= user_form.submit "Update!", :class => 'btn btn-primary' %>
+      <%= link_to 'Back', users_path, :class => 'btn' %>
+   </div>
+
+	<% end if @user %>
