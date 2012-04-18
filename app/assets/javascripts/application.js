@@ -7,4 +7,17 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require_tree .
+//= require_self
+
+$(document).ready(function() {
+
+
+		$(".profile").hover(
+  function () {
+    $(this).find('.current_user_icon').animate({opacity: 1}, 100);
+  },
+  function () {
+    $(this).find('.current_user_icon').animate({opacity: 0},100);
+  }
+);
+});

@@ -35,4 +35,36 @@ module ApplicationHelper
 		error_handling(model,nested_model,field,:msg)
 	end
 
+	def current_user_icon
+		#check to see if current_user_icon has been previously called.
+		#no need to regenerate if we already know it
+		if @current_user_icon.nil?
+			img = current_user.twitter_profile_image_url
+			#find the type of the logged in user
+			type = current_user.designer_profile.present? ? :designer : :coder
+			@current_user_icon=profile_icon img, type
+		end
+
+		return @current_user_icon
+
+	end
+
+	def profile_icon (img, type)
+		#choose which code to return depending on the type
+		return type == :designer ? circle_icon(img).html_safe : octagon_icon(img).html_safe
+	end
+
+	def circle_icon (img)
+		return image_tag img, :class => 'circle'
+	end
+
+	def octagon_icon (img)
+		return "<div class='octagon'>
+					<div class='octagon-top' style='background-image: url(#{img})'></div>
+					<div class='octagon-middle' style=' background-image: url(#{img})'></div>
+					<div class='octagon-bottom' style=' background-image: url(#{img})'></div>
+				</div><!-- end octagon -->"
+		
+	end
+
 end

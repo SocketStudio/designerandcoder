@@ -10,6 +10,8 @@ Designerandcoder::Application.routes.draw do
   match "/auth/failure" => "sessions#failure", :as => :auth_failure
   match "/signout" => "sessions#destroy", :as => :signout
   match "/sign_in" => "sessions#new", :as => :sign_in
+  match "/designers" => "users#designers", :as => :designers
+  match "/coders" => "users#coders", :as => :coders
   
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
