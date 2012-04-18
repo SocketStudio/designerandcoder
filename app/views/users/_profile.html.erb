@@ -13,8 +13,11 @@
 				<br>
 				<p><strong>Interested in collaborating on:</strong> a crazy idea I have about how to integrate Facebook and Pinterest.</p>
 				<div class="somethingcool">Something cool I've made: <a href="http://www.google.com/">www.google.com</a></div>
-				<div class="github_url">Github url: <a href="#">Github.com/animalrobot</a></div>
-				<br>
+
+				<% if @type == :coder %>
+					<div class="github_url">Github url: <a href="#">Github.com/animalrobot</a></div>
+					<br>
+				<% end %>
 
 				<a href="https://twitter.com/intent/tweet?screen_name=<%= profile.user.twitter_username %>" class="btn btn-mini" data-related="DesignerCoder"><i class="icon-comment"></i> Say hi :) </a> 
 
