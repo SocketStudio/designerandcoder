@@ -1,0 +1,16 @@
+<div class="page-header"><h1><%= current_user.name %><small> Get Discovered</small><h1/></div>
+
+  <fieldset>
+    <div class="control-group <%= add_error_class(@user, nil, :twitter_location) %>">
+      <%= user_form.label :twitter_location, "Location", :class => 'control-label' %>
+
+    <div class="controls">
+      <div class="input-prepend">
+        <%= user_form.text_field :twitter_location, :class => 'span2' %>
+      </div>
+      <%= add_error_message(@user, nil, :twitter_location) %>
+    </div>
+
+    </div>
+
+  </fieldset>

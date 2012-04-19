@@ -1,0 +1,32 @@
+<hr>
+		<div class="row profile">
+			<div class="span3">
+				<div class="current_user_icon">
+					<%= current_user_icon %>
+					<span class="amp">&amp;</span> 
+				</div>
+					<%= profile_icon profile.user.twitter_profile_image_url, @type %>
+			</div><!-- end span3 -->
+			<div class="span6">
+				<h1 class="user_name"><%= profile.user.name %><span class="location"></span></h1>
+				<h4><i class="icon-map-marker"></i><%= profile.user.twitter_location %> <i class="icon-magnet"></i><%= profile.user.twitter_follower_count %></h4>
+				<br>
+				<p><strong>Interested in collaborating on:</strong> a crazy idea I have about how to integrate Facebook and Pinterest.</p>
+				<div class="somethingcool">Something cool I've made: <a href="http://www.google.com/">www.google.com</a></div>
+
+				<% if @type == :coder %>
+					<div class="github_url">Github url: <%= link_to "github.com/#{profile.github_profile}", 'http://github.com/' + profile.github_profile %></div>
+					<br>
+				<% end %>
+
+				<% if @type == :designer %>
+					<div class="dribbble_profile">Dribbble url: <%= link_to "dribbble.com/#{profile.dribble_profile}", 'http://dribbble.com/' + profile.dribble_profile %></div>
+					<br>
+				<% end %>
+
+				<a href="https://twitter.com/intent/tweet?screen_name=<%= profile.user.twitter_username %>" class="btn btn-mini" data-related="DesignerCoder"><i class="icon-comment"></i> Say hi :) </a> 
+
+				<a href="https://twitter.com/intent/tweet?screen_name=<%= profile.user.twitter_username %>" class="btn btn-mini" data-related="DesignerCoder"><i class="icon-user"></i> Follow</a>
+			</div>
+		</div>
+		

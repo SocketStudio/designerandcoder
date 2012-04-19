@@ -27,6 +27,10 @@ i.icon-map-marker{
 	vertical-align: baseline;
 }
 
+.jumbotron{
+	font-size: 18px;
+}
+
 #sign_in{
 	font-size: 18px;
 }
@@ -35,7 +39,7 @@ i.icon-map-marker{
 	float: right;
 }
 
-.coder_profile{
+.profile{
 	margin-top: 30px;
 	margin-bottom: 40px;
 }
@@ -45,12 +49,13 @@ i.icon-map-marker{
 	width: 70px;
 }
 
-.designer_icon, .octagon{
+.current_user_icon, .octagon{
 	float: left;
 }
 
-.designer_icon{
+.current_user_icon{
 	width: 110px;
+	opacity:0;
 }
 
 .amp{
@@ -99,6 +104,15 @@ a.twitter-mention {
 
 a.twitter-mention:hover{
 	color: #222;
+}
+
+
+form.edit_user .field_with_errors{
+	display: inline;
+}
+
+form.edit_user .control-group.error > label{
+	color:#000;
 }
 
 .hero-unit{

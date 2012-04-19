@@ -1,0 +1,16 @@
+<br/>
+<%= user_form.fields_for :designer_profile, :html => { :class => 'well' } do |f| %>
+  <fieldset>    
+    <div class="control-group <%= add_error_class(@user, :designer_profile, :dribble_profile) %>">
+      <%= f.label :dribble_profile, :class => 'control-label' %>
+
+    <div class="controls">
+      <div class="input-prepend">
+        <span class="add-on">dribble.com/</span><%= f.text_field :dribble_profile, :class => 'span2' %>
+      </div>
+      <%= add_error_message(@user, :designer_profile, :dribble_profile) %>
+    </div>
+
+    </div>
+  </fieldset>
+<% end %>
