@@ -68,36 +68,6 @@ i.icon-map-marker{
 	font-size: 14px;
 }
 
-.octagon-top {
-height: 0;
-width: 28px;
-border-bottom: 21px solid transparent;
-border-left: 21px solid white;
-border-right: 21px solid white;
-background-position: center top;
-background-size: 70px 70px;
-background-repeat: no-repeat;
-}
-
-.octagon-middle {
-width: 70px;
-height: 28px;
-background-position: center center;
-background-size: 70px 70px;
-background-repeat: no-repeat;
-}
-
-.octagon-bottom {
-height: 0;
-width: 28px;
-border-top: 21px solid transparent;
-border-left: 21px solid white;
-border-right: 21px solid white;
-background-position: center bottom;
-background-size: 70px 70px;
-background-repeat: no-repeat;
-}
-
 a.twitter-mention {
 	color: #444;
 }
@@ -118,3 +88,42 @@ form.edit_user .control-group.error > label{
 .hero-unit{
 	background-color: #fff;
 }
+
+
+.hexagon{
+   padding:0;
+    width:64px;
+}
+    .hexagon span{
+background-size:64px 70px;    
+    }
+
+    .top {
+display: block;
+width: 0;
+height: 0;
+overflow: hidden;
+border-bottom: 17px dashed transparent;
+border-left: 32px dashed white;
+border-right: 32px dashed white;
+    background-position:center top;
+    }
+
+    .middle {
+ display: block;
+width: 64px;
+height: 35px;
+background-position:center center;
+    
+    }
+    
+    .bottom {
+       display: block;
+        width: 0;
+    height: 0;
+    overflow: hidden;
+    border-top: 17px dashed transparent;
+    border-left: 32px dashed white;
+    border-right: 32px dashed white;
+    background-position:center bottom;
+    }
