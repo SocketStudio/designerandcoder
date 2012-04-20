@@ -59,9 +59,21 @@ module ApplicationHelper
 	end
 
 	def octagon_icon (img)
-		return "<div class='hexagon-top' style='background-image: url(#{img})'></div>
-				<div class='hexagon-middle' style='background-image: url(#{img})'></div>
-				<div class='hexagon-bottom' style='background-image: url(#{img})'></div>"
+		 if browser.safari?
+
+		 	"<div class='hexagon-top-safari' style='background-image: url(#{img})'></div>
+		  <div class='hexagon-middle-safari' style='background-image: url(#{img})'></div>
+		  <div class='hexagon-bottom-safari' style='background-image: url(#{img})'></div>"
+		 	
+		 else
+
+		 	"<div class='hexagon-top' style='background-image: url(#{img})'></div>
+		  <div class='hexagon-middle' style='background-image: url(#{img})'></div>
+		  <div class='hexagon-bottom' style='background-image: url(#{img})'></div>"
+		 	
+		 end
+
+		 
 		
 	end
 

@@ -1,0 +1,155 @@
+@import "twitter/bootstrap/bootstrap";
+body { padding-top: 60px; }
+
+@import "twitter/bootstrap/responsive";
+
+// Set the correct sprite paths
+@iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
+@iconWhiteSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings-white.png');
+
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/less.html for their names and documentation
+//
+// Example:
+// @linkColor: #ff0000;
+
+
+input, textarea, select, .uneditable-input{
+	margin-bottom: 0px;
+} 
+
+i.icon-map-marker{
+	vertical-align: baseline;
+}
+
+.jumbotron{
+	font-size: 18px;
+}
+
+#sign_in{
+	font-size: 18px;
+}
+
+#nav{
+	float: right;
+}
+
+.profile{
+	margin-top: 30px;
+	margin-bottom: 40px;
+}
+
+.circle{
+	-moz-border-radius: 35px;
+	-webkit-border-radius: 35px;
+	border-radius: 35px;
+	width: 70px;
+}
+
+.current_user_icon, .octagon{
+	float: left;
+}
+
+.current_user_icon{
+	width: 110px;
+	opacity:0;
+}
+
+.profile_icon{
+	margin-left: 100px;
+}
+
+.amp{
+	font-size: 25px;
+	margin-left: 7px;
+	color: #ccc;
+}
+
+.location{
+	font-size: 14px;
+}
+
+a.twitter-mention {
+	color: #444;
+}
+
+a.twitter-mention:hover{
+	color: #222;
+}
+
+
+form.edit_user .field_with_errors{
+	display: inline;
+}
+
+form.edit_user .control-group.error > label{
+	color:#000;
+}
+
+.hero-unit{
+	background-color: #fff;
+}
+
+.hexagon-top {
+width: 0; 
+height: 0; 
+border-bottom: 17px dashed transparent; 
+border-left: 32px dashed white; 
+border-right: 32px dashed white; 
+background-position: center top;
+
+}
+
+.hexagon-middle {
+display: block;
+width: 64px;
+height: 35px;
+background-position:center center;
+background-size:64px 70px;    
+
+}
+
+.hexagon-bottom {
+width: 0; 
+height: 0; 
+border-top: 17px dashed transparent; 
+border-left: 32px dashed white; 
+border-right: 32px dashed white; 
+background-position: center bottom;
+
+}
+
+.hexagon-top-safari {
+width: 0; 
+height: 0; 
+border-bottom: 17px solid transparent; 
+border-left: 32px solid white; 
+border-right: 32px solid white; 
+background-position: center top;
+}
+
+.hexagon-middle-safari {
+display: block;
+width: 64px;
+height: 35px;
+background-position:center center;
+background-size:64px 70px;    
+}
+    
+.hexagon-bottom-safari {
+  width: 0; 
+height: 0; 
+border-top: 17px solid transparent; 
+border-left: 32px solid white; 
+border-right: 32px solid white; 
+background-position: center bottom;
+
+}
+
+
+
