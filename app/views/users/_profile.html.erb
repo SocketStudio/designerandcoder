@@ -3,7 +3,9 @@
 			<div class="span3">
 				<div class="current_user_icon">
 					<%= current_user_icon %>
+					<span class="ampersand">&amp;</span>
 				</div>
+
 				<div class="profile_icon">
 					<%= profile_icon profile.user.twitter_profile_image_url, @type %>
 				</div>
@@ -19,11 +21,11 @@
 
 				<% if @type == :coder %>
 					<%= content_tag :div, :class=>"github_url" do%>
-						Github url: <%= link_to "github.com/#{profile.github_profile}", 'http://github.com/' + profile.github_profile %>
+						Github: <%= link_to "github.com/#{profile.github_profile}", 'http://github.com/' + profile.github_profile %>
 					<% end if profile.github_profile.present? %>
 
 					<%= content_tag :div, :class=>"stackoverflow_url" do%>
-						Stackoverflow url: <%= link_to "stackoverflow.com/users/#{profile.github_profile}", 'http://stackoverflow.com/users/' + profile.stackoverflow_profile %>
+						Stackoverflow: <%= link_to "stackoverflow.com/users/#{profile.github_profile}", 'http://stackoverflow.com/users/' + profile.stackoverflow_profile %>
 					<% end if profile.stackoverflow_profile.present? %>
 
 				<% end %>
@@ -31,11 +33,11 @@
 				<% if @type == :designer %>
 					<%= content_tag :div, :class=>"dribble_url" do%>
 						<%= image_tag asset_path('dribbble.png')%>
-						Dribbble url: <%= link_to "dribbble.com/#{profile.dribble_profile}", 'http://dribbble.com/' + profile.dribble_profile %>
+						Dribbble: <%= link_to "dribbble.com/#{profile.dribble_profile}", 'http://dribbble.com/' + profile.dribble_profile %>
 					<% end if profile.dribble_profile.present? %>
 
 					<%= content_tag :div, :class=>"behance_url" do%>
-						Behance url: <%= link_to "behance.net/#{profile.behance_profile}", 'http://behance.net' + profile.behance_profile %>
+						Behance: <%= link_to "behance.net/#{profile.behance_profile}", 'http://behance.net' + profile.behance_profile %>
 					<% end if profile.behance_profile.present? %>
 				<% end %>
 				<hr>
