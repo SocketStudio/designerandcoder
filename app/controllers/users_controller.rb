@@ -63,7 +63,7 @@ class UsersController < ApplicationController
 	def get_max_followers
 		designer=DesignerProfile.joins(:user).order("twitter_follower_count DESC").first
 		coder=CoderProfile.joins(:user).order("twitter_follower_count DESC").first
-		return {:designer => designer.user.twitter_follower_count, :coder => coder=CoderProfile.joins(:user).order("twitter_follower_count DESC").first}
+		return {:designer => designer.user.twitter_follower_count, :coder => coder.user.twitter_follower_count}
 	end
 
 end

@@ -56,6 +56,7 @@ module ApplicationHelper
 	def max_followers_ratio followers, type
 		#type: profile type to find the user with the heights number of followers
 		#returns ratio of current profile's followers to user with the height number of followers
+		
 		return followers.to_f / @max_followers[type].to_f
 			
 	end
@@ -70,9 +71,21 @@ module ApplicationHelper
 	end
 
 	def octagon_icon (img)
-		return "<div class='hexagon-top' style='background-image: url(#{img})'></div>
-				<div class='hexagon-middle' style='background-image: url(#{img})'></div>
-				<div class='hexagon-bottom' style='background-image: url(#{img})'></div>"
+		 if browser.safari?
+
+		 	"<div class='hexagon-top-safari' style='background-image: url(#{img})'></div>
+		  <div class='hexagon-middle-safari' style='background-image: url(#{img})'></div>
+		  <div class='hexagon-bottom-safari' style='background-image: url(#{img})'></div>"
+		 	
+		 else
+
+		 	"<div class='hexagon-top' style='background-image: url(#{img})'></div>
+		  <div class='hexagon-middle' style='background-image: url(#{img})'></div>
+		  <div class='hexagon-bottom' style='background-image: url(#{img})'></div>"
+		 	
+		 end
+
+		 
 		
 	end
 

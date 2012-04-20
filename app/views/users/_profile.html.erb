@@ -3,7 +3,9 @@
 			<div class="span3">
 				<div class="current_user_icon">
 					<%= current_user_icon %>
+					<span class="ampersand">&amp;</span>
 				</div>
+
 				<div class="profile_icon">
 					<%= profile_icon profile.user.twitter_profile_image_url, @type %>
 				</div>
@@ -11,19 +13,27 @@
 			</div><!-- end span3 -->
 			<div class="span6 relative">
 				<h1 class="user_name"><%= profile.user.name %><span class="location"></span></h1>
-				<p><%= profile.user.twitter_description %></p>
-				<h4><i class="icon-map-marker"></i><%= profile.user.twitter_location %> <i class="icon-magnet"></i><%= profile.user.twitter_follower_count %></h4>
-				<br>
+
+				<h4>
+					<i class="icon-map-marker"></i>
+					<%= profile.user.twitter_location %>
+					<%= image_tag asset_path('followers.jpg')%><%= profile.user.twitter_follower_count %>
+				</h4>
+								<p><small><%= profile.user.twitter_description %></small></p>
+
+				
+
+				<hr>
 				<p><strong>Interested in collaborating on:</strong> <%= profile.user.answer.question2 %></p>
 				<div class="somethingcool">Something cool I've made: <%= link_to profile.user.answer.question1,"http://#{profile.user.answer.question1}" %></div>
 
 				<% if @type == :coder %>
 					<%= content_tag :div, :class=>"github_url" do%>
-						Github url: <%= link_to "github.com/#{profile.github_profile}", 'http://github.com/' + profile.github_profile %>
+						Github: <%= link_to "github.com/#{profile.github_profile}", 'http://github.com/' + profile.github_profile %>
 					<% end if profile.github_profile.present? %>
 
 					<%= content_tag :div, :class=>"stackoverflow_url" do%>
-						Stackoverflow url: <%= link_to "stackoverflow.com/users/#{profile.github_profile}", 'http://stackoverflow.com/users/' + profile.stackoverflow_profile %>
+						Stackoverflow: <%= link_to "stackoverflow.com/users/#{profile.github_profile}", 'http://stackoverflow.com/users/' + profile.stackoverflow_profile %>
 					<% end if profile.stackoverflow_profile.present? %>
 
 				<% end %>
@@ -31,14 +41,16 @@
 				<% if @type == :designer %>
 					<%= content_tag :div, :class=>"dribble_url" do%>
 						<%= image_tag asset_path('dribbble.png')%>
-						Dribbble url: <%= link_to "dribbble.com/#{profile.dribble_profile}", 'http://dribbble.com/' + profile.dribble_profile %>
+						Dribbble: <%= link_to "dribbble.com/#{profile.dribble_profile}", 'http://dribbble.com/' + profile.dribble_profile %>
 					<% end if profile.dribble_profile.present? %>
 
 					<%= content_tag :div, :class=>"behance_url" do%>
-						Behance url: <%= link_to "behance.net/#{profile.behance_profile}", 'http://behance.net' + profile.behance_profile %>
+						Behance: <%= link_to "behance.net/#{profile.behance_profile}", 'http://behance.net' + profile.behance_profile %>
 					<% end if profile.behance_profile.present? %>
 				<% end %>
 				<hr>
+				
+
 				<a href="https://twitter.com/intent/tweet?screen_name=<%= profile.user.twitter_username %>" class="btn btn-mini" data-related="DesignerCoder"><i class="icon-comment"></i> Say hi :) </a> 
 
 				<a href="https://twitter.com/intent/tweet?screen_name=<%= profile.user.twitter_username %>" class="btn btn-mini" data-related="DesignerCoder"><i class="icon-user"></i> Follow</a>
