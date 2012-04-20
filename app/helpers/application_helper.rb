@@ -59,11 +59,9 @@ module ApplicationHelper
 	end
 
 	def octagon_icon (img)
-		return "<div class='hexagon' style='background-image: url(#{img})'>
-					<span class='top'></span>
-					<span class='middle'></span>
-					<span class='bottom'></span>
-				</div><!-- end hexagon -->"
+		return "<div class='hexagon-top' style='background-image: url(#{img})'></div>
+				<div class='hexagon-middle' style='background-image: url(#{img})'></div>
+				<div class='hexagon-bottom' style='background-image: url(#{img})'></div>"
 		
 	end
 

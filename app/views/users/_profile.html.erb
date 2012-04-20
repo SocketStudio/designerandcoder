@@ -4,7 +4,10 @@
 				<div class="current_user_icon">
 					<%= current_user_icon %>
 				</div>
+				<div class="profile_icon">
 					<%= profile_icon profile.user.twitter_profile_image_url, @type %>
+				</div>
+
 			</div><!-- end span3 -->
 			<div class="span6 relative">
 				<h1 class="user_name"><%= profile.user.name %><span class="location"></span></h1>
@@ -27,6 +30,7 @@
 
 				<% if @type == :designer %>
 					<%= content_tag :div, :class=>"dribble_url" do%>
+						<%= image_tag asset_path('dribbble.png')%>
 						Dribbble url: <%= link_to "dribbble.com/#{profile.dribble_profile}", 'http://dribbble.com/' + profile.dribble_profile %>
 					<% end if profile.dribble_profile.present? %>
 
@@ -34,7 +38,7 @@
 						Behance url: <%= link_to "behance.net/#{profile.behance_profile}", 'http://behance.net' + profile.behance_profile %>
 					<% end if profile.behance_profile.present? %>
 				<% end %>
-
+				<hr>
 				<a href="https://twitter.com/intent/tweet?screen_name=<%= profile.user.twitter_username %>" class="btn btn-mini" data-related="DesignerCoder"><i class="icon-comment"></i> Say hi :) </a> 
 
 				<a href="https://twitter.com/intent/tweet?screen_name=<%= profile.user.twitter_username %>" class="btn btn-mini" data-related="DesignerCoder"><i class="icon-user"></i> Follow</a>
