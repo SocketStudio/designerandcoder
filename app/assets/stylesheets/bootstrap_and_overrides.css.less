@@ -164,15 +164,24 @@ background-position: center bottom;
 }
 
 .compatibility{
+	opacity:0;
 	height:100px;
-	width:100px;
+	width:50px;
 	background-color:#f00;
 	position: absolute;
-	left:-300px;
-	bottom:0;
+	
+	&.compatibility-current_user{
+		left:-300px;
+		bottom:0;
+	}
+
+	&.compatibility-profile{
+		left:-170px;
+		bottom:0;
+	}
 
 	.bar{
-		width: 100px;
+		width: 50px;
 		height: 0px;
 		position:absolute;
 		bottom:0;

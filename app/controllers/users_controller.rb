@@ -13,12 +13,15 @@ class UsersController < ApplicationController
 	def coders
 		@profiles=CoderProfile.all
 		@type=:coder
+		
 		render :index, :notice=>notice
 	end
 
 	def designers
 		@profiles=DesignerProfile.all
 		@type=:designer
+		@max_followers=get_max_followers
+		
 		render :index, :notice => notice
 	end
   
@@ -55,6 +58,12 @@ class UsersController < ApplicationController
 		  redirect_to new_user_url
 		end
 
+	end
+
+	def get_max_followers
+		designer=DesignerProfile.joins(:user).order("twitter_follower_count DESC").first
+		coder=CoderProfile.joins(:user).order("twitter_follower_count DESC").first
+		return {:designer => designer.user.twitter_follower_count, :coder => coder.user.twitter_follower_count}
 	end
 
 end

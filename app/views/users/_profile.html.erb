@@ -53,11 +53,11 @@
 				<a href="https://twitter.com/intent/tweet?screen_name=<%= profile.user.twitter_username %>" class="btn btn-mini" data-related="DesignerCoder"><i class="icon-comment"></i> Say hi :) </a> 
 
 				<a href="https://twitter.com/intent/tweet?screen_name=<%= profile.user.twitter_username %>" class="btn btn-mini" data-related="DesignerCoder"><i class="icon-user"></i> Follow</a>
-
-				
-
-				<div class="progress compatibility">
-				  <div class="bar"></div>
+				<div class="progress compatibility compatibility-current_user">
+				  <div class="bar" data-ratio="<%= max_followers_ratio(current_user.twitter_follower_count, current_user_type) %>"></div>
+				</div>
+				<div class="progress compatibility compatibility-profile">
+				  <div class="bar" data-ratio="<%= max_followers_ratio(profile.user.twitter_follower_count, @type) %>"></div>
 				</div>
 			</div>
 		</div>

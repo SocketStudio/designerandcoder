@@ -41,12 +41,24 @@ module ApplicationHelper
 		if @current_user_icon.nil?
 			img = current_user.twitter_profile_image_url
 			#find the type of the logged in user
-			type = current_user.designer_profile.present? ? :designer : :coder
-			@current_user_icon=profile_icon img, type
+			@current_user_type ||= current_user.designer_profile.present? ? :designer : :coder
+			@current_user_icon=profile_icon img, @current_user_type
 		end
 
 		return @current_user_icon
 
+	end
+
+	def current_user_type
+		@current_user_type ||= current_user.designer_profile.present? ? :designer : :coder
+	end
+
+	def max_followers_ratio followers, type
+		#type: profile type to find the user with the heights number of followers
+		#returns ratio of current profile's followers to user with the height number of followers
+		
+		return followers.to_f / @max_followers[type].to_f
+			
 	end
 
 	def profile_icon (img, type)
