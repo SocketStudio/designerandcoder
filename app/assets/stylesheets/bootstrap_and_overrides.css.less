@@ -45,7 +45,9 @@ i.icon-map-marker{
 }
 
 .circle{
-	border-radius: 50%;
+	-moz-border-radius: 35px;
+	-webkit-border-radius: 35px;
+	border-radius: 35px;
 	width: 70px;
 }
 
@@ -56,6 +58,10 @@ i.icon-map-marker{
 .current_user_icon{
 	width: 110px;
 	opacity:0;
+}
+
+.profile_icon{
+	margin-left: 100px;
 }
 
 .amp{
@@ -89,41 +95,34 @@ form.edit_user .control-group.error > label{
 	background-color: #fff;
 }
 
+    .hexagon-top {
+ width: 0; 
+   height: 0; 
+   border-bottom: 17px dotted transparent; 
+   border-left: 32px solid white; 
+   border-right: 32px solid white; 
+   background-position: center top;
 
-.hexagon{
-   padding:0;
-    width:64px;
-}
-    .hexagon span{
-background-size:64px 70px;    
     }
 
-    .top {
-display: block;
-width: 0;
-height: 0;
-overflow: hidden;
-border-bottom: 17px dashed transparent;
-border-left: 32px dashed white;
-border-right: 32px dashed white;
-    background-position:center top;
-    }
-
-    .middle {
+    .hexagon-middle {
  display: block;
 width: 64px;
 height: 35px;
 background-position:center center;
+background-size:64px 70px;    
+
     
     }
     
-    .bottom {
-       display: block;
-        width: 0;
-    height: 0;
-    overflow: hidden;
-    border-top: 17px dashed transparent;
-    border-left: 32px dashed white;
-    border-right: 32px dashed white;
-    background-position:center bottom;
+    .hexagon-bottom {
+      width: 0; 
+   height: 0; 
+   border-top: 17px dotted transparent; 
+   border-left: 32px solid white; 
+   border-right: 32px solid white; 
+   background-position: center bottom;
+
     }
+
+
