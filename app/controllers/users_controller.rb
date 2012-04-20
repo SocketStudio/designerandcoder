@@ -31,6 +31,7 @@ class UsersController < ApplicationController
 		@user=User.find(current_user.id) if params[:designer] || params[:coder]
 		@user.build_designer_profile if params[:designer]
 		@user.build_coder_profile if params[:coder]
+		@user.build_answer if @user.present?
 	end
 
 	def edit

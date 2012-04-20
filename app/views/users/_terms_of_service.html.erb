@@ -1,0 +1,7 @@
+<div class="control-group <%= add_error_class(@user, nil, :terms_of_service) %>">
+	<label class="checkbox">
+		<%= check_box("user", "terms_of_service") %>
+		I certify that I'm here to collaborate on projects and not to solicit my services
+	</label>
+	<%= add_error_message(@user, nil, :terms_of_service) %> 		 
+</div>
