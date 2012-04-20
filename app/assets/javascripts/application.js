@@ -16,7 +16,13 @@ $(document).ready(function() {
   function () {
   	$bar=$(this).find('.bar')
     $(this).find('.current_user_icon').animate({opacity: 1}, 100,function(){
-    	 $bar.animate({height: 100},400,'swing')
+
+    	$bar.each(function(){
+    		
+    		$(this).animate({height: $(this).data("ratio")*100},500);
+
+    	})
+    	 
     });
    
    
