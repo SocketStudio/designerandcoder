@@ -13,9 +13,13 @@
 			</div><!-- end span3 -->
 			<div class="span6 relative">
 				<h1 class="user_name"><%= profile.user.name %><span class="location"></span></h1>
+				<h4>
+					<i class="icon-map-marker"></i>
+					<%= profile.user.twitter_location %>
+					<%= image_tag asset_path('followers.jpg')%><%= profile.user.twitter_follower_count %>
+				</h4>
+				<hr>
 				<p><%= profile.user.twitter_description %></p>
-				<h4><i class="icon-map-marker"></i><%= profile.user.twitter_location %> <i class="icon-magnet"></i><%= profile.user.twitter_follower_count %></h4>
-				<br>
 				<p><strong>Interested in collaborating on:</strong> <%= profile.user.answer.question2 %></p>
 				<div class="somethingcool">Something cool I've made: <%= link_to profile.user.answer.question1,"http://#{profile.user.answer.question1}" %></div>
 
@@ -41,9 +45,14 @@
 					<% end if profile.behance_profile.present? %>
 				<% end %>
 				<hr>
+				
+
 				<a href="https://twitter.com/intent/tweet?screen_name=<%= profile.user.twitter_username %>" class="btn btn-mini" data-related="DesignerCoder"><i class="icon-comment"></i> Say hi :) </a> 
 
 				<a href="https://twitter.com/intent/tweet?screen_name=<%= profile.user.twitter_username %>" class="btn btn-mini" data-related="DesignerCoder"><i class="icon-user"></i> Follow</a>
+
+				
+
 				<div class="progress compatibility">
 				  <div class="bar"></div>
 				</div>
