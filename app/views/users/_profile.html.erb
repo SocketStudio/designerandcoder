@@ -11,7 +11,7 @@
 				</div>
 
 			</div><!-- end span3 -->
-			<div class="span6">
+			<div class="span6 relative">
 				<h1 class="user_name"><%= profile.user.name %><span class="location"></span></h1>
 				<p><%= profile.user.twitter_description %></p>
 				<h4><i class="icon-map-marker"></i><%= profile.user.twitter_location %> <i class="icon-magnet"></i><%= profile.user.twitter_follower_count %></h4>
@@ -44,5 +44,8 @@
 				<a href="https://twitter.com/intent/tweet?screen_name=<%= profile.user.twitter_username %>" class="btn btn-mini" data-related="DesignerCoder"><i class="icon-comment"></i> Say hi :) </a> 
 
 				<a href="https://twitter.com/intent/tweet?screen_name=<%= profile.user.twitter_username %>" class="btn btn-mini" data-related="DesignerCoder"><i class="icon-user"></i> Follow</a>
+				<div class="progress compatibility">
+				  <div class="bar"></div>
+				</div>
 			</div>
 		</div>

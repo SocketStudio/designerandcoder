@@ -14,10 +14,17 @@ $(document).ready(function() {
 
 		$(".profile").hover(
   function () {
-    $(this).find('.current_user_icon').animate({opacity: 1}, 100);
+  	$bar=$(this).find('.bar')
+    $(this).find('.current_user_icon').animate({opacity: 1}, 100,function(){
+    	 $bar.animate({height: 100},400,'swing')
+    });
+   
+   
   },
   function () {
-    $(this).find('.current_user_icon').animate({opacity: 0},100);
-  }
-);
+  	$current_user_icon=$(this).find('.current_user_icon');
+    $(this).find('.bar').animate({height: 0},200,function(){
+    	$current_user_icon.animate({opacity: 0},100);
+    });
+  });
 });
