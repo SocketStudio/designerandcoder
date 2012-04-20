@@ -6,7 +6,13 @@ class User < ActiveRecord::Base
   	has_one :coder_profile
     accepts_nested_attributes_for :coder_profile
 
-    validates :twitter_location, :presence=>true
+    validates :twitter_location, :presence=>true, :on => :update
+
+    has_one :answer
+    accepts_nested_attributes_for :answer
+
+    attr_accessor :terms_of_service
+    validates_acceptance_of :terms_of_service, :message => "D&C is used for collaboration so please certify that you aren't selling your services"
   
   def self.create_with_omniauth(auth)
     create! do |user|
@@ -20,7 +26,7 @@ class User < ActiveRecord::Base
     self.name = auth["info"]["name"]
     self.twitter_username=auth["extra"]["raw_info"]["screen_name"]
     self.twitter_profile_image_url = "https://api.twitter.com/1/users/profile_image?screen_name=#{self.twitter_username}&size=bigger"
-    self.twitter_location = auth["info"]["location"].blank? ? "Internet" : auth["info"]["location"]
+    self.twitter_location = auth["info"]["location"]
     self.twitter_follower_count=auth["extra"]["raw_info"]["followers_count"]
     self.twitter_description=auth["extra"]["raw_info"]["description"]
   end

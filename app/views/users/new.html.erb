@@ -12,10 +12,18 @@
 
 		<%= render :partial=>"user_form", :locals=>{:user_form => user_form } %>
 
+		<%= render :partial=>"answer_form", :locals=>{:user_form => user_form } %>
 		
 		<%= render :partial=>"designer_form", :locals=>{:user_form => user_form } if @user.designer_profile %>
 
 		<%= render :partial=>"coder_form", :locals=>{:user_form => user_form } if @user.coder_profile %>
+		
+		<br/>
+
+
+		<%= render "terms_of_service" %>
+
+
 
 	<div class="form-actions">
       <%= user_form.submit "Create My Profile", :class => 'btn btn-primary' %>

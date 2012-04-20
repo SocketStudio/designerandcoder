@@ -1,0 +1,29 @@
+<br/>
+<%= user_form.fields_for :answer, :html => { :class => 'well' } do |f| %>
+  <fieldset>    
+    <div class="control-group <%= add_error_class(@user, :answer, :question1) %>">
+      <%= f.label :question1, "What's the coolest thing you've made?", :class => 'control-label' %>
+
+    <div class="controls">
+      <div class="input-prepend">
+        <span class="add-on">http://</span><%= f.text_field :question1, :placeholder=>"myproject.com",:class => 'span2' %>
+      </div>
+      <%= add_error_message(@user, :answer, :question1) %>
+    </div>
+
+    </div>
+
+
+      <div class="control-group <%= add_error_class(@user, :answer, :question2) %>">
+
+    <div class="controls">
+      <div class="input-prepend">
+        <span class="add-on">I'm interested in collaborating on </span><%= f.text_field :question2, :placeholder=>"open source, web app, etc.", :class => 'span2' %>
+      </div>
+      <%= add_error_message(@user, :answer, :question1) %>
+    </div>
+
+    </div>
+
+  </fieldset>
+<% end %>

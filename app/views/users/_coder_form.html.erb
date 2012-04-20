@@ -1,11 +1,29 @@
-<br>
+<br/>
 <%= user_form.fields_for :coder_profile, :html => { :class => 'well' } do |f| %>
-  <fieldset>
+  <fieldset>    
+    <div class="control-group <%= add_error_class(@user, :coder_profile, :github_profile) %>">
+      <%= f.label :github_profile, :class => 'control-label' %>
 
-       <div class="controls">
+    <div class="controls">
       <div class="input-prepend">
         <span class="add-on">github.com/</span><%= f.text_field :github_profile, :class => 'span2' %>
       </div>
+      <%= add_error_message(@user, :coder_profile, :github_profile) %>
+    </div>
+
+    </div>
+
+
+    <div class="control-group <%= add_error_class(@user, :coder_profile, :stackoverflow_profile) %>">
+      <%= f.label :stackoverflow_profile, "Stackoverflow profile",:class => 'control-label' %>
+
+    <div class="controls">
+      <div class="input-prepend">
+        <span class="add-on">stackoverflow.com/users/</span><%= f.text_field :stackoverflow_profile, :class => 'span2' %>
+      </div>
+      <%= add_error_message(@user, :coder_profile, :stackoverflow_profile) %>
+    </div>
+
     </div>
 
   </fieldset>

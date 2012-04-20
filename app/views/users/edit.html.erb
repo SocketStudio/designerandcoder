@@ -2,9 +2,13 @@
 
 		<%= render :partial=>"user_form", :locals=>{:user_form => user_form } %>
 
+		<%= render :partial=>"answer_form", :locals=>{:user_form => user_form } %>
+
 		<%= render :partial=>"designer_form", :locals=>{:user_form => user_form } if @user.designer_profile %>
 
 		<%= render :partial=>"coder_form", :locals=>{:user_form => user_form } if @user.coder_profile %>
+
+		<%= render "terms_of_service" %>
 
 	<div class="form-actions">
       <%= user_form.submit "Update!", :class => 'btn btn-primary' %>
