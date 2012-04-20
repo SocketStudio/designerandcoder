@@ -12,16 +12,17 @@
 	
 	<%= render "layouts/alerts" %>
 	
-<div id="nav">	<% if current_user %>
-	  Welcome <%= current_user.name %>!
-		<% if  current_user.designer_profile.present? || current_user.coder_profile.present? %>
-		<%= link_to "My Profile", edit_user_path(current_user) %>
-		<% end %>
-		 <%= link_to "Sign Out", signout_path %>
-	<% else %>
-	  <%= link_to "Sign in with Twitter", "/auth/twitter" %>
-	<% end %>
-</div>
+<% if current_user %>
+<ul id="nav">
+<% if  current_user.designer_profile.present? || current_user.coder_profile.present? %>
+<li><%= link_to "Designers", designers_path %></li>
+<li><%= link_to "Coders", coders_path %></li>
+<li><%= link_to "My Profile", edit_user_path(current_user) %></li>
+<% end %>
+<li><%= link_to "Sign Out", signout_path %></li>
+</ul>
+<% end %>
+
 	
 	
 	<%= yield %>
